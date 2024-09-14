@@ -1,6 +1,6 @@
 import RohitMeena from "../../assets/images/Rohit-Meena.png";
 import AlanTuring from "../../assets/images/Alan-Turing.png";
-import SteveSingh from "../../assets/images/Steve-Singh.png";
+import SteveSingh from "../../assets/images/Steve-singh.png";
 const TestimonialData = [
   {
     id: 1,
