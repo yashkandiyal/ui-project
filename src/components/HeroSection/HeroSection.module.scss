@@ -1,0 +1,246 @@
+@import "../../styles/mixins.scss";
+@import "../../assets/colors.scss";
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.heroSection {
+  background-color: $background-blue;
+  text-align: center;
+  padding-top: 2rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-bottom: 2rem;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      rgba($primary-blue, 0.1) 0%,
+      rgba($primary-blue, 0) 70%
+    );
+    animation: rotate 20s linear infinite;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: $text-dark;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.subtitle {
+  display: block;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  color: $primary-blue;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+  animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+.description {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: $text-dark;
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeInUp 0.8s ease-out 0.4s backwards;
+}
+
+.highlight {
+  color: $primary-blue;
+  font-weight: bold;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $primary-blue;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+.trialForm {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.8s ease-out 0.6s backwards;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.input {
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba($primary-blue, 0.2);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  width: clamp(200px, 30vw, 280px);
+  transition: all 0.3s ease;
+
+  &::placeholder {
+    color: $text-light;
+    font-size: 0.9rem;
+  }
+
+  &:focus {
+    border-color: $primary-blue;
+    box-shadow: 0 0 0 3px rgba($primary-blue, 0.1);
+    outline: none;
+  }
+}
+
+.startButton {
+  @include button-primary;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    width: clamp(200px, 30vw, 280px);
+  }
+}
+
+.trialInfo {
+  font-size: 0.95rem;
+  color: $text-light;
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.8s ease-out 0.8s backwards;
+}
+
+.usedBySection {
+  background-color: $white;
+  border-radius: 16px;
+  padding: 2rem 3rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.8s ease-out 1s backwards;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .usedByText {
+    margin-top: 0;
+    font-weight: 600;
+    color: $text-light;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1.5rem;
+
+  img {
+    width: clamp(70px, 15vw, 100px);
+    height: auto;
+    object-fit: contain;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 3rem 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .usedBySection {
+    padding: 1.5rem;
+  }
+}
