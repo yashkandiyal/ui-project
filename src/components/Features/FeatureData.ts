@@ -5,7 +5,7 @@ import CustomReports from "../../assets/images/custom-reports-icon.png";
 import SuperiorEmployeeExperience from "../../assets/images/employee-experience-icon.png";
 import EasyIntegrations from "../../assets/images/integrations-icon.png";
 import Configurable from "../../assets/images/Configurable.png";
-import ScananyBill from "../../assets/images/ScananyBill.png";
+import ScananyBill from "../../assets/images/ScanAnyBill.png";
 import Trip from "../../assets/images/trip.png";
 
 const FeatureList = [
