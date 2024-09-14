@@ -189,11 +189,11 @@
         font-weight: 700;
         color: $text-dark;
         margin-bottom: 0.2rem;
-        font-size: clamp(0.9rem, 2.5vw, 1.1rem); /* Reduced font size */
+        font-size: clamp(0.9rem, 2.5vw, 1.1rem); 
       }
 
       p:last-child {
-        font-size: clamp(0.75rem, 2vw, 0.85rem); /* Reduced font size */
+        font-size: clamp(0.75rem, 2vw, 0.85rem); 
         color: $text-light;
         font-style: italic;
       }
